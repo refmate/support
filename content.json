@@ -34,13 +34,13 @@
     ],
     "demoCards2": [
       {
-        "gif": "placeholder-guided-capture.gif",
+        "gif": "vid6.gif",
         "alt": "Using Guided Capture",
         "title": "Guided Capture",
         "text": "Use <button>Guided Capture</button> to manually walk through capturing metadata for a Book, Article or incollection entry, anywhere - even on pages RefMate doesn't otherwise recognise."
       },
       {
-        "gif": "placeholder-citation-parser.gif",
+        "gif": "vid7.gif",
         "alt": "Using the Citation Parser",
         "title": "Citation Parser",
         "text": "Select a citation - either a single reference or a full reference list - and use the <button>Citation Parser</button> to parse it directly into structured metadata in your collection."
