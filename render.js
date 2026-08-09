@@ -155,14 +155,11 @@ function hr() {
   return hrEl;
 }
 
-function renderCollecting(data, container) {
-  container.appendChild(el("h2", { className: "section-title", text: data.collectingReferences.sectionTitle }));
-  container.appendChild(el("p", { className: "support-text", text: data.collectingReferences.intro }));
-
+function renderDemoCardsRow(cards, container) {
   const panel = el("div", { className: "static-panel" });
   const row = el("div", { className: "demo-row-inline" });
 
-  data.collectingReferences.demoCards.forEach(card => {
+  cards.forEach(card => {
     const col = el("div", { className: "demo-inline-col" });
     const figure = el("figure", { className: "demo-card-inline" });
     const frame = el("div", { className: "demo-frame-inline" });
@@ -184,6 +181,17 @@ function renderCollecting(data, container) {
 
   panel.appendChild(row);
   container.appendChild(panel);
+}
+
+function renderCollecting(data, container) {
+  container.appendChild(el("h2", { className: "section-title", text: data.collectingReferences.sectionTitle }));
+  container.appendChild(el("p", { className: "support-text", text: data.collectingReferences.intro }));
+
+  renderDemoCardsRow(data.collectingReferences.demoCards, container);
+
+  if (data.collectingReferences.demoCards2 && data.collectingReferences.demoCards2.length) {
+    renderDemoCardsRow(data.collectingReferences.demoCards2, container);
+  }
 
   data.accordions.forEach(acc => container.appendChild(renderAccordion(acc)));
 }
@@ -210,12 +218,26 @@ function renderMetadataSection(section, container) {
 }
 
 async function init() {
-  const res = await fetch("content.json");
-  const data = await res.json();
+  const body = document.getElementById("helpBody");
+
+  let data;
+  try {
+    const res = await fetch("content.json");
+    if (!res.ok) {
+      throw new Error(`content.json request failed with status ${res.status}`);
+    }
+    data = await res.json();
+  } catch (err) {
+    console.error("Failed to load content.json:", err);
+    body.innerHTML =
+      '<p class="support-text">Sorry, the help content could not be loaded. ' +
+      "Please try refreshing the page. If this keeps happening, make sure " +
+      "content.json is being served alongside this page (opening the file " +
+      "directly via file:// will block this request in most browsers).</p>";
+    return;
+  }
 
   renderNavChips(data);
-
-  const body = document.getElementById("helpBody");
 
   renderIntro(data, body);
   renderCollecting(data, body);
@@ -236,9 +258,16 @@ async function init() {
   spacer.innerHTML = "&nbsp;";
   body.appendChild(spacer);
 
-  if (typeof initAccordions === "function" && typeof initChipLinks === "function") {
-    initAccordions(document.getElementById("helpContainer"));
-    initChipLinks(document.getElementById("helpContainer"));
+  const container = document.getElementById("helpContainer");
+  if (typeof initAccordions === "function") {
+    initAccordions(container);
+  } else {
+    console.warn("initAccordions() is not defined - accordions will not expand/collapse.");
+  }
+  if (typeof initChipLinks === "function") {
+    initChipLinks(container);
+  } else {
+    console.warn("initChipLinks() is not defined - nav chips will not scroll/expand their target.");
   }
 }
 
