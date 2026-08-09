@@ -529,7 +529,7 @@ body {
     }
 
     .link-external::before {
-      content: '\\203A\\2009';
+      content: '›';
       font-weight: 900;
       font-size: 1.05em;
       color: var(--primary-color);
