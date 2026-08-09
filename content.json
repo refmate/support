@@ -6,16 +6,18 @@
   "navChips": [
     { "label": "Search Engines", "href": "#section-search-engines" },
     { "label": "Repositories", "href": "#section-repositories" },
-    { "label": "Identifiers & Manual Entries", "href": "#section-identifiers" },
+    { "label": "Identifier Resolution", "href": "#section-identifiers" },
+    { "label": "Guided Capture, Parser &amp; Manual Entry", "href": "#section-manual-entries" },
     { "label": "Workspace", "href": "#section-workspace" },
-    { "label": "Metadata", "href": "#section-metadata" }
+    { "label": "Metadata", "href": "#section-metadata" },
+    { "label": "Changelog", "href": "#section-changelog" }
   ],
   "intro": {
     "text": "RefMate is a browser extension for collecting and organising academic references directly in your browser. Capture references with one click while searching, resolve any identifier you come across, check availability and edit metadata - everything in one place. Once you're ready, export everything to your reference manager."
   },
   "collectingReferences": {
     "sectionTitle": "Collecting References",
-    "intro": "The core functionality of RefMate is collecting references. You can access this in two ways:",
+    "intro": "The core functionality of RefMate is collecting references. You can access this in four ways:",
     "demoCards": [
       {
         "gif": "vid1.gif",
@@ -27,7 +29,19 @@
         "gif": "vid2.gif",
         "alt": "Using the right-click context menu",
         "title": "Context Menu Access",
-        "text": "RefMate can also resolve any DOI or ISBN anywhere, using the context menu. Select the identifier, right-click, and choose <button>Get Reference</button>."
+        "text": "RefMate can also resolve any DOI or ISBN anywhere, using the context menu. Select the identifier, right-click, and choose <button>Resolve ID/Link</button>."
+      },
+      {
+        "gif": "placeholder-guided-capture.gif",
+        "alt": "Using Guided Capture",
+        "title": "Guided Capture",
+        "text": "Use <button>Guided Capture</button> to manually walk through capturing metadata for a Book, Article or incollection entry, anywhere - even on pages RefMate doesn't otherwise recognise."
+      },
+      {
+        "gif": "placeholder-citation-parser.gif",
+        "alt": "Using the Citation Parser",
+        "title": "Citation Parser",
+        "text": "Select a citation - either a single reference or a full reference list - and use the <button>Citation Parser</button> to parse it directly into structured metadata in your collection."
       }
     ]
   },
@@ -152,21 +166,42 @@
   },
   "identifiers": {
     "id": "section-identifiers",
-    "title": "Identifiers &amp; Manual Entries",
-    "intro": "RefMate resolves DOIs and ISBNs. For sources without identifiers, you can create manual BibTeX entries directly in the workspace.",
+    "title": "Identifier Resolution",
+    "intro": "RefMate resolves DOIs and ISBNs anywhere you come across them.",
     "sources": "DOIs are resolved via the <external href=\"https://www.crossref.org/documentation/retrieve-metadata/rest-api/\">Crossref REST API</external> and ISBNs across <external href=\"https://opac.k10plus.de/DB=2.299/LNG=EN/\">K10Plus</external>, <external href=\"https://discover.libraryhub.jisc.ac.uk/\">Library Hub Discover</external>, and <external href=\"https://openlibrary.org/search\">Open Library</external>. It also draws on data directly provided by repositories and search engines. Data quality varies by source: DOI lookups typically yield the most complete records, with ISBN being most reliable for books and monographs.",
     "accordions": [
       {
         "id": "section-doi-isbn",
         "title": "Identifiers (DOI & ISBN)",
         "body": [
-          { "type": "text", "html": "Click the <button>Quick Capture</button> button next to an identifier (DOI or ISBN) to collect the reference. If you have turned off the button or if it does not appear, select the identifier, right-click to open the context menu, and click <button>Get Reference</button>." },
+          { "type": "text", "html": "Click the <button>Quick Capture</button> button next to an identifier (DOI or ISBN) to collect the reference. If you have turned off the button or if it does not appear, select the identifier, right-click to open the context menu, and click <button>Resolve ID/Link</button>." },
           { "type": "infobox", "text": "<button>Quick Capture</button> is optimised for search engines only. On other pages, the button may duplicate or disappear. To resolve an identifier anywhere, select it and use the context menu instead." },
           { "type": "text", "html": "<button>DOI:</button> Use a clean DOI, a valid DOI link, or a publisher link containing a full DOI:" },
           { "type": "list", "items": ["10.1080/01436599408420398", "http://doi.org/10.1080/01436599408420398", "http://www.tandfonline.com/doi/full/10.1080/01436599408420398"] },
           { "type": "text", "html": "<button>ISBN:</button> Use ISBN-13 or ISBN-10:" },
           { "type": "list", "items": ["9780691161396", "0195050010"] },
           { "type": "text", "html": "If multiple ISBNs are given for the same book, try the ISBN-13 first." }
+        ]
+      }
+    ]
+  },
+  "manualEntries": {
+    "id": "section-manual-entries",
+    "title": "Guided Capture, Citation Parser &amp; Manual Entry",
+    "intro": "For sources without a usable identifier, or where you want more control over what gets captured, RefMate offers three ways to build entries directly.",
+    "accordions": [
+      {
+        "id": "section-guided-capture",
+        "title": "Guided Capture",
+        "body": [
+          { "type": "text", "html": "Placeholder section - to be completed." }
+        ]
+      },
+      {
+        "id": "section-citation-parser",
+        "title": "Citation Parser",
+        "body": [
+          { "type": "text", "html": "Placeholder section - to be completed." }
         ]
       },
       {
@@ -324,6 +359,39 @@
           { "type": "text", "html": "Special LaTeX characters (e.g., <secondary>\\\"{o}</secondary>) are automatically converted to their Unicode equivalents (\u00f6) so that titles and author names display cleanly in the workspace and in copied citations." },
           { "type": "text", "html": "When you copy or export entries, RefMate automatically removes empty fields and sanitises citation keys (removing spaces and illegal characters) to ensure valid BibTeX syntax." },
           { "type": "text", "html": "Aditionally, you can also have any proprietary RefMate field removed (<secondary>RefCollection</secondary>, <secondary>RefData</secondary> and <secondary>RefTag</secondary>)" }
+        ]
+      }
+    ]
+  },
+  "changelog": {
+    "id": "section-changelog",
+    "title": "Changelog",
+    "intro": "An overview of recent updates and improvements to RefMate.",
+    "accordions": [
+      {
+        "id": "section-changelog-3-2",
+        "title": "Version 3.2 (August 2026)",
+        "body": [
+          { "type": "text", "html": "<primary>New Features</primary>" },
+          {
+            "type": "list",
+            "items": [
+              "<button>Guided Capture</button> - capture reference metadata for Books, Articles and incollection anywhere",
+              "<button>Citation Parser</button> - select a citation in a paper or reference section and parse it directly to your collection as structured metadata. Works for single citations and reference lists for APA, MLA, Chicago and other styles. Parsed entries include the text you parsed from, for you to check completeness. Currently in Beta.",
+              "<button>Entry Completeness</button> - in the workspace, the extension checks stored entries against expected fields and marks entries that may require attention."
+            ]
+          },
+          { "type": "text", "html": "<primary>Improvements</primary>" },
+          {
+            "type": "list",
+            "items": [
+              "<button>Get Reference</button> menu item has been renamed to <button>Resolve ID/Link</button> to better reflect what it does against the guided capture and parser features.",
+              "JSTOR fetching works again: it now sends your session/login cookies when fetching pages, so institutional/library-access articles resolve correctly (previously it just pretended to be a browser, which didn't always work).",
+              "Cleaner history view: the entry list header now has a collapsible button group (new entry / bulk autocomplete / expand-all).",
+              "Fixed issues that could cause ISBN lookups to fail in certain contexts.",
+              "Cleaned up how proprietary metadata fields (source, tags, notes) are stored and stripped, reducing edge-case formatting bugs."
+            ]
+          }
         ]
       }
     ]
