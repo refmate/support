@@ -1,4 +1,3 @@
-
 function renderInline(html) {
   if (!html) return "";
   return html
@@ -225,7 +224,6 @@ async function init() {
   renderNamedSection(data.repositories, body, { extraNote: data.repositories.publisherNote });
   renderNamedSection(data.identifiers, body, { withHr: true, extraNote: data.identifiers.sources });
 
-  // Workspace uses <h2> not <p>, and is followed by an <hr> after metadata section is separate
   body.appendChild(el("h2", { className: "section-title", id: data.workspace.id, text: data.workspace.title }));
   body.appendChild(el("p", { className: "support-text", text: data.workspace.intro }));
   data.workspace.accordions.forEach(acc => body.appendChild(renderAccordion(acc)));
@@ -237,6 +235,11 @@ async function init() {
   spacer.style.marginTop = "32px";
   spacer.innerHTML = "&nbsp;";
   body.appendChild(spacer);
+
+  if (typeof initAccordions === "function" && typeof initChipLinks === "function") {
+    initAccordions(document.getElementById("helpContainer"));
+    initChipLinks(document.getElementById("helpContainer"));
+  }
 }
 
 document.addEventListener("DOMContentLoaded", init);
