@@ -196,14 +196,14 @@
         "id": "section-guided-capture",
         "title": "Guided Capture",
         "body": [
-          { "type": "text", "html": "Placeholder section - to be completed." }
+          { "type": "text", "html": "Add a reference directly from library catalogues and other places manually using a structured capture. Right-click anywhere on the page, select <secondary>Guided Capture</secondary> and entry type (article, book, or book chapter), and the interface shows guides you through the parsing. As you parse, it builds a properly formatted metadata entry and stores it to your collection." }
         ]
       },
       {
         "id": "section-citation-parser",
         "title": "Citation Parser",
         "body": [
-          { "type": "text", "html": "Placeholder section - to be completed." }
+          { "type": "text", "html": "Select a citation in a file or on a website - or a reference list - and it's converted to structured metadata for your collection automatically. Recognises DOIs, ISBNs, and arXiv IDs directly, and otherwise detects the citation style (currently: APA, MLA, Chicago, Harvard, and IEEE) and reads the raw text accordingly to work out the author, title, year, and other fields. This feature is not final yet - it currently works only on a fixed set of styles and gets easily confused." }
         ]
       },
       {
