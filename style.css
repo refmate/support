@@ -31,7 +31,7 @@ body {
 
     .help-overlay {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0; left: 15%; right: 15%; bottom: 0;
       background-color: var(--bg-color);
       z-index: 100;
       overflow-y: auto;
