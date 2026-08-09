@@ -47,10 +47,13 @@ body {
       position: sticky;
       top: 0;
       width: 100%;
-      background-color: var(--bibtex-bg);
-      border-bottom: 1px solid var(--outline-grey);
+      background-color: var(--bg-color);
+      border-bottom: 0px solid var(--outline-grey);
       z-index: 90;
-      padding: 0px 0;
+      padding-left: 0% !important;
+      padding-right: 0% !important;
+      padding-top: 5px;
+      padding-bottom: 5px;
       min-height: 40px;
       box-sizing: border-box;
     }
