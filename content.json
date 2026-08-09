@@ -1,0 +1,331 @@
+{
+  "meta": {
+    "title": "RefMate Help",
+    "supportEmail": "inbox.web@mailo.com"
+  },
+  "navChips": [
+    { "label": "Search Engines", "href": "#section-search-engines" },
+    { "label": "Repositories", "href": "#section-repositories" },
+    { "label": "Identifiers & Manual Entries", "href": "#section-identifiers" },
+    { "label": "Workspace", "href": "#section-workspace" },
+    { "label": "Metadata", "href": "#section-metadata" }
+  ],
+  "intro": {
+    "text": "RefMate is a browser extension for collecting and organising academic references directly in your browser. Capture references with one click while searching, resolve any identifier you come across, check availability and edit metadata - everything in one place. Once you're ready, export everything to your reference manager."
+  },
+  "collectingReferences": {
+    "sectionTitle": "Collecting References",
+    "intro": "The core functionality of RefMate is collecting references. You can access this in two ways:",
+    "demoCards": [
+      {
+        "gif": "vid1.gif",
+        "alt": "Using the Quick Capture button",
+        "title": "Quick Capture Button",
+        "text": "The <button>Quick Capture</button> button works especially on search engines and is optimised for a number of websites and link types."
+      },
+      {
+        "gif": "vid2.gif",
+        "alt": "Using the right-click context menu",
+        "title": "Context Menu Access",
+        "text": "RefMate can also resolve any DOI or ISBN anywhere, using the context menu. Select the identifier, right-click, and choose <button>Get Reference</button>."
+      }
+    ]
+  },
+  "accordions": [
+    {
+      "id": "section-quick-capture",
+      "title": "Quick Capture",
+      "body": [
+        { "type": "text", "html": "<button>Quick Capture</button> is optimised to work on search engines and four repositories (HAL, JSTOR, CyberLeninka and arXiv). It can also generally recognise links from publisher and aggregator pages and resolve identifiers, but this is not manually optimised and may produce inconsistent results." },
+        {
+          "type": "infobox",
+          "intro": "The button has three variants that indicate expected metadata completeness:",
+          "list": [
+            { "icon": "icons/quickcapture-identifier.png", "text": "Very Complete" },
+            { "icon": "icons/quickcapture-external.png", "text": "Mostly Complete" },
+            { "icon": "icons/quickcapture-scholar.png", "text": "Frequently Incomplete" }
+          ]
+        },
+        {
+          "type": "infobox",
+          "intro": "In <button>Settings</button>, you can toggle <button>Quick Capture</button> globally, per site, or per URL type:",
+          "list": [
+            { "text": "The global toggle turns it off everywhere, including on search engines." },
+            { "text": "The identifier toggle takes effect everywhere except on search engines." },
+            { "text": "Site-specific toggles apply only to those pages and do not affect search engines." }
+          ]
+        }
+      ]
+    }
+  ],
+  "searchEngines": {
+    "id": "section-search-engines",
+    "title": "Search Engines",
+    "intro": "RefMate is fully optimised for three academic search engines: Google Scholar, OpenAlex, and Scopus. On these pages, <button>Quick Capture</button> reliably retrieves the most complete metadata available for a given entry.",
+    "accordions": [
+      {
+        "id": "section-google-scholar",
+        "title": "Google Scholar",
+        "body": [
+          { "type": "text", "html": "The <button>Quick Capture</button> button appears next to entries that contain an identifier. It retrieves more complete data than Google Scholar's own BibTeX export and includes the document link. You can also add any entry independently by right-clicking on <primary>Import into BibTeX</primary> and selecting <button>Get Reference</button>." },
+          { "type": "text", "html": "On Google Scholar, RefMate relies on various disparate sources to work together. At times this may lead to issues - here's how to solve them:" },
+          {
+            "type": "infobox",
+            "label": "\u00bbRefMate requests permission to access a site.\u00ab",
+            "text": "RefMate avoids site-specific permissions where possible and comes with relevant publisher and repository pages whitelisted. Occasionally, a host permission is needed to process a URL. Any outstanding permissions are listed at the bottom of <button>Settings</button>, where you can grant them."
+          },
+          {
+            "type": "infobox",
+            "label": "\u00bbSome entries are missing the Quick Capture button.\u00ab",
+            "text": "Activate <external href=\"https://scholar.google.com/scholar_settings?sciifh=1&hl=en&as_sdt=0,5\">Show links to import citations into BibTeX</external> in your Google Scholar settings under <primary>Bibliography Manager</primary>."
+          },
+          {
+            "type": "infobox",
+            "label": "\u00bbLinks to JSTOR, Project Muse and other pages produce error notifications.\u00ab",
+            "text": "Bot protection may block background tabs from loading the target site. Open the page manually and complete any captchas or verifications. Avoid using VPN or Private Relay. For JSTOR, make sure you are logged in."
+          }
+        ]
+      },
+      {
+        "id": "section-openalex",
+        "title": "OpenAlex",
+        "body": [
+          { "type": "text", "html": "RefMate retrieves metadata from OpenAlex via the OpenAlex API. You can add references by right-clicking any entry in the search results and selecting <button>Get Reference</button>, or using the <button>Quick Capture</button> button that appears next to each entry." },
+          { "type": "text", "html": "RefMate works with all OpenAlex links that contain an ID, such as:" },
+          { "type": "list", "items": ["https://openalex.org/W4411647848", "W4411647848"] }
+        ]
+      },
+      {
+        "id": "section-scopus",
+        "title": "Scopus",
+        "body": [
+          { "type": "text", "html": "RefMate extracts the Scopus ID from publication URLs and retrieves structured metadata directly from the Scopus gateway API. It then converts the JSON payload into a clean BibTeX entry, including fields like authors, journal, year, volume, pages, DOI, and abstract." },
+          { "type": "infobox", "text": "Since it directly extracts Scopus metadata, entries are usually complete and up-to-date. To verify completeness for Scopus entries based on present identifiers, run <button>Autocomplete</button>." }
+        ]
+      }
+    ]
+  },
+  "repositories": {
+    "id": "section-repositories",
+    "title": "Repositories",
+    "intro": "In order to work reliably on search engines, RefMate is finetuned for a number of repositories and major publishers. For four major repositories, <button>Quick Capture</button> is optimised to work directly on the repository site.",
+    "publisherNote": "Additionally, for a number of publisher and aggregator pages frequently listed on Google Scholar, RefMate extracts and resolves links: <primary>OUP</primary>, <primary>MDPI</primary>, <primary>Nature</primary>, <primary>Project MUSE</primary>, <primary>ScienceDirect</primary>, <primary>Google Books</primary>, and <primary>OAPEN</primary> - resolving full citations via Crossref or the ISBN search system. When links to these pages appear on Google Scholar, RefMate shows the <button>Quick Capture</button> button. You can toggle this per platform in Settings.",
+    "accordions": [
+      {
+        "title": "HAL Open Science",
+        "body": [
+          { "type": "text", "html": "RefMate retrieves metadata from HAL Open Science by fetching the BibTeX entry provided by HAL's built-in BibTeX export. You can add a reference by right-clicking on any HAL page link containing a HAL-ID and selecting <button>Get Reference</button>. If you have <button>Quick Capture</button> enabled, the button appears next to the title of the HAL entry." },
+          { "type": "text", "html": "RefMate works with HAL URLs and HAL IDs, such as:" },
+          { "type": "list", "items": ["https://hal.science/hal-01390889v1", "hal-01390889v1"] }
+        ]
+      },
+      {
+        "id": "section-jstor",
+        "title": "JSTOR",
+        "body": [
+          { "type": "text", "html": "RefMate works with any JSTOR stable link. The <button>Quick Capture</button> button appears next to the title of a given JSTOR entry, on entry pages and in the search results. Alternatively, you can select any JSTOR stable link, right-click to open the context menu, and click <button>Get Reference</button>. All metadata is directly collected from JSTOR." },
+          {
+            "type": "infobox",
+            "label": "Note on DOIs and JSTOR",
+            "texts": [
+              "Not all JSTOR entries have a registered, functional DOI, however all JSTOR entries have a DOI assigned in their page source. JSTOR apparently performs its own validation before displaying a DOI on the article page, suppressing those that are not verifiably registered. RefMate, however, fetches metadata directly from the page source. As a result, the exported BibTeX may include a non-functional DOI.",
+              "In practice this is rarely a problem: since all JSTOR entries are captured with their stable URL, the Source link in the history view will always point directly to the article, making DOI resolution redundant for access purposes. The respective JSTOR entries are always flagged as open, so you can access them by clicking on the author name directly rather than resolving access via the identifier. Be aware, however, that the DOI field in JSTOR entries should be treated with caution."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "CyberLeninka",
+        "body": [
+          { "type": "text", "html": "RefMate extracts citation data from CyberLeninka.ru article pages by scraping metadata tags or DOM content directly from CyberLeninka. When resolving CyberLeninka links from Google Scholar, or from the search results on CyberLeninka, RefMate temporarily opens the link in a background tab to collect data, then closes it automatically. When you're already on CyberLeninka, it extracts data directly from the current page." }
+        ]
+      },
+      {
+        "id": "section-arxiv",
+        "title": "arXiv",
+        "body": [
+          { "type": "text", "html": "On arXiv, the <button>Quick Capture</button> button is accessible in the page header and the citation section of a given paper. Metadata is retrieved directly from arXiv. You can also select the arXiv link or arXiv ID and add entries via the context menu:" },
+          { "type": "list", "items": ["https://arxiv.org/abs/2507.12614", "https://arxiv.org/pdf/2507.12614", "arXiv:2507.12614"] }
+        ]
+      }
+    ]
+  },
+  "identifiers": {
+    "id": "section-identifiers",
+    "title": "Identifiers &amp; Manual Entries",
+    "intro": "RefMate resolves DOIs and ISBNs. For sources without identifiers, you can create manual BibTeX entries directly in the workspace.",
+    "sources": "DOIs are resolved via the <external href=\"https://www.crossref.org/documentation/retrieve-metadata/rest-api/\">Crossref REST API</external> and ISBNs across <external href=\"https://opac.k10plus.de/DB=2.299/LNG=EN/\">K10Plus</external>, <external href=\"https://discover.libraryhub.jisc.ac.uk/\">Library Hub Discover</external>, and <external href=\"https://openlibrary.org/search\">Open Library</external>. It also draws on data directly provided by repositories and search engines. Data quality varies by source: DOI lookups typically yield the most complete records, with ISBN being most reliable for books and monographs.",
+    "accordions": [
+      {
+        "id": "section-doi-isbn",
+        "title": "Identifiers (DOI & ISBN)",
+        "body": [
+          { "type": "text", "html": "Click the <button>Quick Capture</button> button next to an identifier (DOI or ISBN) to collect the reference. If you have turned off the button or if it does not appear, select the identifier, right-click to open the context menu, and click <button>Get Reference</button>." },
+          { "type": "infobox", "text": "<button>Quick Capture</button> is optimised for search engines only. On other pages, the button may duplicate or disappear. To resolve an identifier anywhere, select it and use the context menu instead." },
+          { "type": "text", "html": "<button>DOI:</button> Use a clean DOI, a valid DOI link, or a publisher link containing a full DOI:" },
+          { "type": "list", "items": ["10.1080/01436599408420398", "http://doi.org/10.1080/01436599408420398", "http://www.tandfonline.com/doi/full/10.1080/01436599408420398"] },
+          { "type": "text", "html": "<button>ISBN:</button> Use ISBN-13 or ISBN-10:" },
+          { "type": "list", "items": ["9780691161396", "0195050010"] },
+          { "type": "text", "html": "If multiple ISBNs are given for the same book, try the ISBN-13 first." }
+        ]
+      },
+      {
+        "title": "Manual Entry",
+        "body": [
+          { "type": "text", "html": "In the workspace, click the <button>+ New</button> button to create a blank BibTeX entry. You can choose from common templates (article, book, book chapter, etc.) and edit it immediately or use autocomplete to add metadata based on identifiers." }
+        ]
+      }
+    ]
+  },
+  "workspace": {
+    "id": "section-workspace",
+    "title": "Workspace",
+    "intro": "The workspace is where you organise and manage your collected references. Arrange entries in collections, edit metadata with the overlay, sort and export to BibTeX, RIS, or printable bibliographies.",
+    "accordions": [
+      {
+        "id": "section-collections",
+        "title": "Collections",
+        "body": [
+          { "type": "text", "html": "RefMate organises references in collections. New entries are always added to the collection tab you had last opened." },
+          {
+            "type": "demoRow",
+            "gif": "vid4.gif",
+            "alt": "Renaming a collection",
+            "label": "Renaming Collections",
+            "text": "To rename a collection, click, select and hold its tab title, then type the new name and release. All entries in that collection automatically update to reflect the new name."
+          },
+          {
+            "type": "demoRow",
+            "gif": "vid3.gif",
+            "alt": "Moving entries between collections",
+            "label": "Moving Entries between Collections",
+            "text": "To move entries, hold <primary>Ctrl</primary>/<primary>Cmd</primary> and click to select multiple entries, then drag any selected header onto the target collection tab. <br>To move a single entry, either drag and drop it or, change the <secondary>RefCollection =</secondary> field in the BibTeX and refresh the page."
+          },
+          {
+            "type": "infobox",
+            "label": "Collection Field",
+            "text": "When copying entries to your clipboard or using the export feature, RefMate always includes the active collection name as a proprietary BibTeX field. When exporting or bulk-copying, you can chose to have proprietary fields removed."
+          }
+        ]
+      },
+      {
+        "title": "Entries",
+        "body": [
+          { "type": "text", "html": "You can edit, copy, and delete entries, with all changes saved automatically. If the BibTeX of an entry contains <secondary>url = {...}</secondary>, that URL will be added to the entry title as a clickable link, unless for books as metadata retrieved via SRU usually does not contain any full-text links. Note that this may not be the only or most current URL where the source is available, as accuracy depends on the original data provider. Regarding access options, see <primary>Full-Text Search</primary> below." },
+          {
+            "type": "demoRow",
+            "gif": "vid5.gif",
+            "alt": "Deleting entries",
+            "label": "Deleting Entries",
+            "text": "You can delete all collections and entries using the <button>Delete</button> button in the top right corner. Furthermore, you can delete single entries by clicking on the respective button in the entry header, delete selected items by selecting and using the <button>Delete</button> button in the top right corner and delete collections by using the <button>close</button> button in right corner of a collection tab."
+          },
+          { "type": "infobox", "label": "Storage", "text": "RefMate stores entries in the browser cache, and is thus not suitable for long-term storage of references. Entries may be deleted upon some browser or extension updates, or when clearing the browser data." }
+        ]
+      },
+      {
+        "title": "Sorting",
+        "body": [
+          { "type": "text", "html": "Use the <button>Sort</button> button to cycle through sorting modes: by date added, author name, or publication year, in ascending or descending order. The current sort mode is displayed next to the icon." }
+        ]
+      },
+      {
+        "title": "Metadata Panel",
+        "body": [
+          { "type": "text", "html": "When editing entries, you can work with either plain BibTeX code or use the editing overlay for the metadata panel, which helps prevent formatting errors. By default, RefMate uses the overlay. For individual entries, you can open the BibTeX by clicking on the <button>BibTeX</button> button in the right corner of the metadata panel. To permanently switch to the BibTeX view, navigate to <button>Settings</button> and then <primary>Display &amp; Notifications</primary>. The overlay provides input fields for each BibTeX field, along with the following action buttons:" },
+          {
+            "type": "list",
+            "items": [
+              "<button>Rearrange Names</button> - converts author/editor names to \"Last, First\" format",
+              "<button>Lowercase</button> / <button>Title Case</button> - changes the case of title fields",
+              "<button>Delete;</button> - removes a field entirely",
+              "<button>+ Field</button> - quickly add commonly used fields (volume, pages, DOI, etc.)"
+            ]
+          },
+          { "type": "text", "html": "RefMate lets you convert the entry type between Journal Articles, Monographs, Book Sections, and others. Click the entry type label (e.g., \"article\") to open the type menu and choose a new type." },
+          { "type": "infobox", "label": "Metadata Format", "text": "RefMate stores and displays all entries in BibTeX format regardless of your preferred export setting. Selecting RIS as your export format (see below) does not change how entries appear in the workspace - RIS files are generated through conversion from BibTeX upon export." }
+        ]
+      },
+      {
+        "id": "section-export",
+        "title": "Copy and Export",
+        "body": [
+          { "type": "text", "html": "Whenever you add an entry to RefMate, it is automatically copied to your clipboard. You can also:" },
+          {
+            "type": "list",
+            "items": [
+              "Copy the identifier (DOI, ISBN, arXiv ID) of an entry separately using the identifier copy button next to each entry.",
+              "Copy <button>all entries</button> in the current collection to your clipboard with the <button>Copy All</button> button in the header.",
+              "Export the entire collection as a <secondary>.bib</secondary> or <secondary>.ris</secondary> file using the <button>Export</button> button."
+            ]
+          },
+          { "type": "infobox", "label": "Export Format", "text": "The export format can be changed in <primary>Settings - Content &amp; Export</primary>. You can also change the format of entries added automatically to your clipboard." },
+          { "type": "text", "html": "You can also export your entries as a <button>printable bibliography</button>. While not meant to replace reference managers, this is useful when you want your tags, notes, and entries in one place - for example, in advance of a library visit." }
+        ]
+      },
+      {
+        "title": "Full-Text Search",
+        "body": [
+          { "type": "text", "html": "RefMate is designed to work as a hub for researching and obtaining material. To this end, links to full texts are embedded in the author and date header of a given entry. If full texts are linked in a metadata set, the header text is blue. If the embedded link directs to a page with generally wide access (such as JSTOR or arXiv), this is indicated with a small, green tag next to it. Access depends on your library's or regional and national licenses. You can also copy the identifier (DOI or ISBN) of a given entry by clicking the respective button." },
+          { "type": "text", "html": "Each entry has a <button>Search</button> button that opens a relevant external resource, where you can check access options, based on the entry's type and available fields. This is especially useful for linking to a library or union catalogue. The search target is chosen based on priorities - by default, more precise identifiers take priority over broader queries. You can customise the search targets and priorities in <button>Settings</button> for each identifier and entry type individually - for example, you can set a library catalogue link as the default for ISBN searches." },
+          { "type": "text", "html": "By default, RefMate searches ISBN and ISSN on <primary>WorldCat</primary>, DOI on <primary>libkey.io</primary>, Journal Titles on <primary>OpenAlex</primary>, and Title+Year on <primary>Google</primary>." },
+          {
+            "type": "infobox",
+            "label": "Target URLs",
+            "text": "To add a custom target URL, select the desired search scope in your provider's advanced search settings and search for a representative item. Copy the resulting URL and remove the search term from it. Paste the cleaned URL into the relevant field in RefMate's settings. Target URLs should append the search query at the end and look like these examples:",
+            "list": [
+              "https://www.google.com/search?q=",
+              "https://www.sudoc.abes.fr/cbs//DB=2.1/CMD?ACT=SRCHA&IKT=7&SRT=RLV&TRM= - Sudoc (ISBN)",
+              "https://lbssbb.gbv.de/DB=1/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM= - StabiKat (ISSN)",
+              "https://discover.libraryhub.jisc.ac.uk/search?author=&title= - LibraryHub Discover (title keywords)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "id": "section-metadata",
+    "title": "Metadata",
+    "intro": "Enhance your references with customizable tags and free-text notes. Use autocomplete to fill in missing fields based on existing identifiers, and rely on automatic LaTeX character conversion and BibTeX cleanup for consistent metadata.",
+    "accordions": [
+      {
+        "id": "section-tags",
+        "title": "Tags",
+        "body": [
+          { "type": "text", "html": "Each entry can be assigned a <button>tag</button> (e.g., \"To Read\", \"Read\", \"Important\"). Click it to change or remove the tag. Tags are fully customisable in the settings, where you can rename the four default tags and add up to two custom tags with your own labels." },
+          { "type": "infobox", "text": "You can disable tags in the <primary>Settings</primary>. Tags are stored as a proprietary BibTeX field, hence they have no effect in reference managers." }
+        ]
+      },
+      {
+        "title": "Notes",
+        "body": [
+          { "type": "text", "html": "Add a free-text <button>note</button> to any entry by clicking the <button>+ Add Note</button> button or by toggling the Notes view using the button in the header." },
+          { "type": "infobox", "text": "Notes are saved automatically as you type as a regular BibTeX field. To delete a note, either delete the text in the note panel, or delete the field in the metadata panel" }
+        ]
+      },
+      {
+        "title": "Autocomplete",
+        "body": [
+          { "type": "text", "html": "RefMate can automatically fill in missing or incomplete bibliographic fields by looking up metadata based on identifiers already present in the entry. The lookup is triggered by an identifier (DOI or ISBN) already present in the entry." },
+          { "type": "infobox", "text": "Autocomplete is available in two forms: per-entry and per-collection." },
+          { "type": "text", "html": "Sometimes, collected metadata contains an identifier but is otherwise incomplete or outdated. This may be especially the case with entries collected from Google Scholar BibTeX, PubMed, arXiv, and JSTOR. In that case, individual or per-collection autocomplete helps you quickly resolve these inconsistencies." },
+          { "type": "text", "html": "Another use case for autocomplete is assembling <secondary>@incollection</secondary> type entries. If you add them with a DOI, they rarely include complete information about the book they appear in (series, editor, publisher, total pages), and a book's record conversely rarely includes chapter-level detail. To merge the two, simply add the missing identifier (either DOI or ISBN) to an <secondary>@incollection</secondary> entry, run autocomplete, and review the added fields." },
+          { "type": "text", "html": "You can also use the autocomplete feature when adding a new entry manually." },
+          { "type": "text", "html": "When using Autocomplete, please be aware of two possible restrictions:" },
+          { "type": "infobox", "label": "Identifier Quality", "text": "Autocomplete is only as reliable as the identifier it works with. DOIs occasionally point to retracted, corrected, or superseded records. ISBNs may resolve to a different edition than the one you actually used. Always verify the fetched metadata - particularly edition, year, and publisher. Furthermore, some works may be published under multiple ISBNs, which will result in different metadata." },
+          { "type": "infobox", "label": "Source Inconsistencies", "text": "Crossref metadata (used for DOI lookups) is supplied by publishers and is not always complete or correctly formatted. Author names may be inverted, special characters may be misencoded, and fields like journal or booktitle may differ in abbreviation style from your other entries. Review fetched fields before accepting them." },
+          { "type": "text", "html": "Conflicts need manual resolution: When autocomplete finds a disagreement, it does not choose a winner - it leaves both values in the entry and flags the incoming one. You need to open the entry in edit mode, compare the two values, delete the one you don't want, and - if you edit the BibTeX directly - remove the autocomplete suffix from the field name. Running <button>Autocomplete</button> on a large collection can therefore produce a number of entries that require follow-up attention." },
+          { "type": "infobox", "text": "Autocomplete is optimised to be used with the editing overlay as metadata panel. When using it with plain BibTeX, look out for fields ending in <secondary>_autocomplete</secondary> - those may be duplicates or require manual editing." }
+        ]
+      },
+      {
+        "title": "Conversion & Clean-Up",
+        "body": [
+          { "type": "text", "html": "Special LaTeX characters (e.g., <secondary>\\\"{o}</secondary>) are automatically converted to their Unicode equivalents (\u00f6) so that titles and author names display cleanly in the workspace and in copied citations." },
+          { "type": "text", "html": "When you copy or export entries, RefMate automatically removes empty fields and sanitises citation keys (removing spaces and illegal characters) to ensure valid BibTeX syntax." },
+          { "type": "text", "html": "Aditionally, you can also have any proprietary RefMate field removed (<secondary>RefCollection</secondary>, <secondary>RefData</secondary> and <secondary>RefTag</secondary>)" }
+        ]
+      }
+    ]
+  }
+}
