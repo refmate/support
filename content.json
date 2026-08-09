@@ -30,7 +30,9 @@
         "alt": "Using the right-click context menu",
         "title": "Context Menu Access",
         "text": "RefMate can also resolve any DOI or ISBN anywhere, using the context menu. Select the identifier, right-click, and choose <button>Resolve ID/Link</button>."
-      },
+      }
+    ],
+    "demoCards2": [
       {
         "gif": "placeholder-guided-capture.gif",
         "alt": "Using Guided Capture",
