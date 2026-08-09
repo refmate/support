@@ -57,9 +57,9 @@
           "type": "infobox",
           "intro": "The button has three variants that indicate expected metadata completeness:",
           "list": [
-            { "icon": "icons/quickcapture-identifier.png", "text": "Very Complete" },
-            { "icon": "icons/quickcapture-external.png", "text": "Mostly Complete" },
-            { "icon": "icons/quickcapture-scholar.png", "text": "Frequently Incomplete" }
+            { "icon": "quickcapture-identifier.png", "text": "Very Complete" },
+            { "icon": "quickcapture-external.png", "text": "Mostly Complete" },
+            { "icon": "quickcapture-scholar.png", "text": "Frequently Incomplete" }
           ]
         },
         {
