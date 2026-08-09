@@ -253,6 +253,9 @@ async function init() {
   body.appendChild(hr());
 
   renderMetadataSection(data.metadata, body);
+  body.appendChild(hr());
+
+  renderMetadataSection(data.changelog, body);
 
   const spacer = el("p");
   spacer.style.marginTop = "32px";
