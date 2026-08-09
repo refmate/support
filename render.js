@@ -36,7 +36,7 @@ function renderBodyBlock(block) {
         box.appendChild(el("p", { className: "subsection-group-label-box", html: renderInline(block.label) }));
       }
       if (block.intro) {
-        box.appendChild(document.createTextNode(renderInlineText(block.intro)));
+        box.appendChild(el("p", { className: "support-text", html: renderInline(block.intro) }));
       }
       if (block.text) {
         box.appendChild(el("p", { className: "support-text", html: renderInline(block.text) }));
@@ -245,6 +245,7 @@ async function init() {
   renderNamedSection(data.searchEngines, body);
   renderNamedSection(data.repositories, body, { extraNote: data.repositories.publisherNote });
   renderNamedSection(data.identifiers, body, { withHr: true, extraNote: data.identifiers.sources });
+  renderNamedSection(data.manualEntries, body);
 
   body.appendChild(el("h2", { className: "section-title", id: data.workspace.id, text: data.workspace.title }));
   body.appendChild(el("p", { className: "support-text", text: data.workspace.intro }));
