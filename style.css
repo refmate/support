@@ -42,12 +42,13 @@ body {
     .help-overlay::-webkit-scrollbar { display: none; }
 
     .help-header {
-      position: sticky;
+      position: sticky !important;
       top: 0;
-      width: 100%;
+      width: 80%;
       background-color: var(--bg-color);
       border-bottom: 0px solid var(--outline-grey);
       z-index: 90;
+      margin: 0 auto;        
       padding-left: 0% !important;
       padding-right: 0% !important;
       padding-top: 5px;
@@ -75,12 +76,14 @@ body {
       box-sizing: border-box;
     }
 
-.help-content-wrapper {
-  width: 80%;   
-  max-width: 1200px;  
-  margin: 0 auto;        
-  box-sizing: border-box;
-}    .help-body { padding: var(--spacing-lg) 0; }
+    .help-content-wrapper {
+      width: 80%;   
+      max-width: 1200px;  
+      margin: 0 auto;        
+      box-sizing: border-box;
+    }    
+    
+    .help-body { padding: var(--spacing-lg) 0; }
 
     .help-overlay .close-help {
       background-color: var(--bg-color);
