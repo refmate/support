@@ -8,7 +8,7 @@
   --outline-grey: #a7a7a726;
   --outline-grey-field: #a7a7a726;
 
-  --container-width: 65%;
+  --container-width: 100%;
   --button-height: 24px;
   --button-font-size: 12px;
   --standard-font-size: 14px;
@@ -75,8 +75,12 @@ body {
       box-sizing: border-box;
     }
 
-    .help-content-wrapper { width: 100%;}
-    .help-body { padding: var(--spacing-lg) 0; }
+.help-content-wrapper {
+  width: 80%;   
+  max-width: 1200px;  
+  margin: 0 auto;        
+  box-sizing: border-box;
+}    .help-body { padding: var(--spacing-lg) 0; }
 
     .help-overlay .close-help {
       background-color: var(--bg-color);
