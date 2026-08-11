@@ -46,7 +46,7 @@ body {
     .help-header {
       position: sticky;
       top: 0;
-      width: 100%;
+      width: 130%;
       background-color: var(--bg-color);
       border-bottom: 0px solid var(--outline-grey);
       z-index: 90;
