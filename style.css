@@ -74,6 +74,7 @@ body {
       margin: 0 auto;
       padding: 2px 0px;
       box-sizing: border-box;
+      flex-wrap: nowrap;
     }
 
     .help-content-wrapper {
@@ -385,6 +386,24 @@ body {
 
     .help-header .intro-chips {
       margin: 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      flex-shrink: 1;
+      min-width: 0;
+      mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+    }
+
+    .help-header .intro-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .help-header .intro-chips .tag {
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .chip-link {
