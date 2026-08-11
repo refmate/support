@@ -37,7 +37,7 @@
         "gif": "vid6.gif",
         "alt": "Using Guided Capture",
         "title": "Guided Capture",
-        "text": "Use <button>Guided Capture</button> to manually walk through capturing metadata for a Book, Article or incollection entry, anywhere - even on pages RefMate doesn't otherwise recognise."
+        "text": "Use <button>Guided Capture</button> to manually walk through capturing metadata for a Book, Article or incollection entry, anywhere - even on pages RefMate doesn't otherwise recognise. Press <secondary>enter</secondary> to proceed in the overlay."
       },
       {
         "gif": "vid7.gif",
@@ -196,7 +196,7 @@
         "id": "section-guided-capture",
         "title": "Guided Capture",
         "body": [
-          { "type": "text", "html": "Add a reference directly from library catalogues and other places manually using a structured capture. Right-click anywhere on the page, select <secondary>Guided Capture</secondary> and entry type (article, book, or book chapter), and the interface shows guides you through the parsing. As you parse, it builds a properly formatted metadata entry and stores it to your collection." }
+          { "type": "text", "html": "Add a reference directly from library catalogues and other places manually using a structured capture. Right-click anywhere on the page, select <button>Guided Capture</button> and entry type (article, book, or book chapter), and the interface shows guides you through the parsing. Proceed by pressing <button>enter</button>. As you parse, it builds a properly formatted metadata entry and stores it to your collection." }
         ]
       },
       {
