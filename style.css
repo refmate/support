@@ -75,8 +75,8 @@ body {
       box-sizing: border-box;
     }
 
-    .help-content-wrapper { width: 90%;}
-    .help-body { padding: var(--spacing-lg) 0; }
+    .help-content-wrapper { width: 100%;}
+    .help-body { padding: var(--spacing-lg) 0; margin-left: 10%, margin-right:10%; }
 
     .help-overlay .close-help {
       background-color: var(--bg-color);
