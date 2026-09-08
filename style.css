@@ -52,6 +52,8 @@ body {
   background-color: var(--bg-color);
   border-bottom: 1px solid var(--outline-grey);
   z-index: 90;
+  padding-top: 6px;
+  padding-bottom: 6px;
   box-sizing: border-box;
   overflow-x: hidden;
 }
