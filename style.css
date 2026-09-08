@@ -45,23 +45,16 @@ body {
     }
     .help-overlay::-webkit-scrollbar { display: none; }
 
-    .help-header {
-      position: sticky !important;
-      top: 0;
-      width: 100%;
-      background-color: var(--bg-color);
-      border-bottom: 1px solid var(--outline-grey);
-      z-index: 90;
-      margin: 0 auto;        
-      padding-left: 10% !important;
-      padding-right: 10% !important;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      min-height: 40px;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      max-width: 100vw;
-    }
+.help-header {
+  position: sticky !important;
+  top: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--outline-grey);
+  z-index: 90;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
     .header-left {
     gap: 0px !important;
@@ -69,21 +62,19 @@ body {
     padding: 0px !important;
     }
 
-    .help-header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--spacing-md);
-      min-height: var(--button-height);
-      width: var(--container-width);
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2px 0px;
-      box-sizing: border-box;
-      flex-wrap: nowrap;
-      max-width: 100%;
-    }
-
+.help-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  min-height: var(--button-height);
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2px 0px;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
     .help-content-wrapper {
       width: 80%;   
       max-width: 1200px;  
@@ -383,13 +374,14 @@ body {
       margin: 14px 0 14px;
     }
 
-    .intro-chips .tag {
-      font-size: 13px;
-      padding: 4px 9px;
-      outline: 1px solid var(--outline-grey);
-      background-color: var(--bg-color);
-      border-radius: 7px;
-    }
+.intro-chips .tag {
+  font-size: 13px;
+  padding: 4px 9px;
+  border: 1px solid var(--outline-grey);
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  border-radius: 7px;
+}
 
     .help-header .intro-chips {
       margin: 0;
