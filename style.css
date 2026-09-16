@@ -167,7 +167,7 @@ img {
   width: 100%;
   background-color: var(--button-text);
   border-bottom: 0px solid var(--border-strong);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   z-index: 90;
   padding: var(--spacing-sm) 0;
 }
@@ -177,7 +177,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-sm);
-  min-height: 28px;
+  min-height: 38px;
   width: var(--content-width);
   margin: 0 auto;
   padding: 0;
