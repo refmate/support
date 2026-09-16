@@ -1,6 +1,3 @@
-Implemented all ten groups. Two notes on things the JS constrains: the `hr` margins and the info-box icon `vertical-align` are set inline by `render.js`, so the CSS defers to them rather than fighting with `!important`. I dropped `.header-left` (it was pure no-op overrides) but kept `.close-help` restyled onto the shared tokens, since the header markup plausibly regains a close button.
-
-```css
 :root {
   color-scheme: light dark;
 
@@ -876,4 +873,3 @@ img {
     word-break: break-all;
   }
 }
-```
