@@ -165,10 +165,9 @@ img {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: color-mix(in srgb, var(--bg-color) 88%, transparent);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
-  backdrop-filter: saturate(180%) blur(12px);
+  background-color: var(--button-text);
   border-bottom: 0px solid var(--border-strong);
+  box-shadow: var(--shadow-md);
   z-index: 90;
   padding: var(--spacing-sm) 0;
 }
