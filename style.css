@@ -405,7 +405,7 @@ img {
 
 .static-panel {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 0px solid var(--border);
   border-radius: var(--radius-lg);
   padding: var(--spacing-md);
   margin-bottom: var(--spacing-sm);
